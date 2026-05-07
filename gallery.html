@@ -4,23 +4,28 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Gallery | Shining Star Public School, Bidar</title>
 <meta name="description" content="View our beautiful gallery - classroom activities, sports day, annual day, fancy dress & more at Shining Star Public School Bidar.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
 <!-- NAVBAR -->
 <nav class="navbar"><div class="nav-inner">
-<a href="index.html" class="nav-logo"><div class="logo-placeholder">S</div><span>Shining Star</span></a>
-<ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html" class="active">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul>
-<div class="nav-cta" id="navCta"><a href="tel:9845754212" class="btn-small btn-call">📞 Call</a><a href="admissions.html" class="btn-small btn-admit">Admissions</a></div>
+<a href="index.html" class="nav-logo"><img src="assets/images/logo.png" style="height: 45px; mix-blend-mode: multiply;" alt="Logo"></a>
+<ul class="nav-links" id="navLinks"><li><a href="index.html"><i class="fa-solid fa-house" style="color: #A55EEA;"></i> Home</a></li><li><a href="about.html"><i class="fa-solid fa-heart" style="color: #A55EEA;"></i> About</a></li><li><a href="programs.html"><i class="fa-solid fa-book-open" style="color: #A55EEA;"></i> Classes</a></li>
+<li class="dropdown"><a href="gallery.html" class="active"><i class="fa-solid fa-images" style="color: #A55EEA;"></i> Gallery <i class="fa-solid fa-caret-down"></i></a><ul class="dropdown-menu"><li><a href="gallery.html"><i class="fa-solid fa-image" style="color: #45B7D1; margin-right: 8px;"></i> Image Gallery</a></li><li><a href="video.html"><i class="fa-solid fa-video" style="color: #FF6B6B; margin-right: 8px;"></i> Video Gallery</a></li></ul></li>
+<li><a href="admissions.html"><i class="fa-solid fa-graduation-cap" style="color: #A55EEA;"></i> Admissions</a></li><li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #A55EEA;"></i> Contact</a></li></ul>
+<div class="nav-cta" id="navCta">
+<a href="admissions.html" class="btn-small btn-admit" style="background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);"><i class="fa-solid fa-wand-magic-sparkles"></i> Admissions Open</a>
+</div>
 <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </div></nav>
 
 <!-- HERO -->
-<section class="gallery-hero">
-<h1>Our Gallery 📸</h1>
-<p>Beautiful moments of learning, fun & celebration</p>
-<div class="rainbow-divider" style="margin-top:16px"></div>
+<section class="gallery-hero" style="background-image: linear-gradient(135deg, #f6d365 0%, #fda085 100%); padding: 80px 20px; text-align: center;">
+<h1 style="color: white; font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Our Gallery <i class="fa-solid fa-camera-retro" style="color: #fff;"></i></h1>
+<p style="color: white; font-size: 1.2rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Beautiful moments of learning, fun & celebration</p>
+<div class="rainbow-divider" style="margin: 20px auto 0 auto"></div>
 </section>
 
 <!-- GALLERY -->
@@ -61,17 +66,26 @@
 </div>
 
 <!-- CTA -->
-<section class="cta-section"><div class="container"><h2>Want to see more? Visit us! 🌟</h2><p>Schedule a campus tour today</p><div class="cta-buttons"><a href="contact.html" class="btn btn-white">📍 Visit Us</a><a href="tel:9845754212" class="btn btn-secondary">📞 Call Now</a></div></div></section>
+<section class="cta-section" style="background-image: linear-gradient(rgba(165, 94, 234, 0.8), rgba(255, 107, 107, 0.8)), url('assets/images/generated/cta_bg_1778131284946.png'); background-size: cover; background-position: center; background-attachment: fixed; color: white;">
+<div class="container" style="padding: 60px 20px; text-align: center;">
+<h2 style="font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 15px; color: white;">Want to see more? Visit us! <i class="fa-solid fa-star" style="color: #FFD700;"></i></h2>
+<p style="font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">Schedule a campus tour today</p>
+<div class="cta-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+<a href="contact.html" class="btn btn-white" style="background: white; color: #FF6B6B;"><i class="fa-solid fa-location-dot"></i> Visit Us</a>
+<a href="tel:9845754212" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white;"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer"><div class="container"><div class="footer-grid">
-<div class="footer-about"><h3>🌟 Shining Star Public School</h3><p>Nurturing young minds with love, creativity, and joy.</p><p style="margin-top:10px">📍 Hyder Colony, Chidri Road, Bidar - 585401</p></div>
+<div class="footer-about"><img src="assets/images/logo.png" alt="Shining Star Logo" style="height: 80px; margin-bottom: 15px; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);"><p>Nurturing young minds with love, creativity, and joy.</p><p style="margin-top:10px"><i class="fa-solid fa-location-dot"></i> Hyder Colony, Chidri Road, Bidar - 585401</p></div>
 <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:9845754212">📞 9845754212</a></li><li><a href="tel:9845749212">📞 9845749212</a></li><li><a href="mailto:shiningstarsschoolbidar@gmail.com">📧 Email Us</a></li></ul></div>
-</div><div class="footer-bottom"><p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved.</p></div></div></footer>
+<div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:9845754212"><i class="fa-solid fa-phone"></i> 9845754212</a></li><li><a href="tel:9845749212"><i class="fa-solid fa-phone"></i> 9845749212</a></li><li><a href="mailto:shiningstarsschoolbidar@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li></ul></div>
+</div><div class="footer-bottom"><p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved. Made with <i class="fa-solid fa-heart" style="color: #FF6B6B;"></i></p></div></div></footer>
 
-<a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float">💬</a>
-<div class="call-float"><a href="tel:9845754212">📞</a></div>
+<a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="call-float"><a href="tel:9845754212"><i class="fa-solid fa-phone"></i></a></div>
 
 <script src="js/script.js"></script>
 <script>

@@ -4,34 +4,39 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Admissions | Shining Star Public School, Bidar</title>
 <meta name="description" content="Apply for KG, LKG, UKG admissions at Shining Star Public School Bidar. Online admission form. Best preschool near Chidri Road.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/admissions.css">
 </head>
 <body>
 <nav class="navbar"><div class="nav-inner">
-<a href="index.html" class="nav-logo"><div class="logo-placeholder">S</div><span>Shining Star</span></a>
-<ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admissions.html" class="active">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul>
-<div class="nav-cta" id="navCta"><a href="tel:9845754212" class="btn-small btn-call">📞 Call</a></div>
+<a href="index.html" class="nav-logo"><img src="assets/images/logo.png" style="height: 45px; mix-blend-mode: multiply;" alt="Logo"></a>
+<ul class="nav-links" id="navLinks"><li><a href="index.html"><i class="fa-solid fa-house" style="color: #A55EEA;"></i> Home</a></li><li><a href="about.html"><i class="fa-solid fa-heart" style="color: #A55EEA;"></i> About</a></li><li><a href="programs.html"><i class="fa-solid fa-book-open" style="color: #A55EEA;"></i> Classes</a></li>
+<li class="dropdown"><a href="gallery.html"><i class="fa-solid fa-images" style="color: #A55EEA;"></i> Gallery <i class="fa-solid fa-caret-down"></i></a><ul class="dropdown-menu"><li><a href="gallery.html"><i class="fa-solid fa-image" style="color: #45B7D1; margin-right: 8px;"></i> Image Gallery</a></li><li><a href="video.html"><i class="fa-solid fa-video" style="color: #FF6B6B; margin-right: 8px;"></i> Video Gallery</a></li></ul></li>
+<li><a href="admissions.html" class="active"><i class="fa-solid fa-graduation-cap" style="color: #A55EEA;"></i> Admissions</a></li><li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #A55EEA;"></i> Contact</a></li></ul>
+<div class="nav-cta" id="navCta">
+<a href="admissions.html" class="btn-small btn-admit" style="background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);"><i class="fa-solid fa-wand-magic-sparkles"></i> Admissions Open</a>
+</div>
 <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </div></nav>
 
-<section class="admissions-hero">
-<h1>Admissions Open 2026-27 🎒</h1>
-<p>Give your child the gift of a joyful beginning</p>
-<div class="rainbow-divider" style="margin-top:16px"></div>
+<section class="admissions-hero" style="background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 80px 20px; text-align: center;">
+<h1 style="color: #333; font-size: 3rem; margin-bottom: 10px;">Admissions Open 2026-27 <i class="fa-solid fa-backpack" style="color: #45B7D1;"></i></h1>
+<p style="color: #555; font-size: 1.2rem;">Give your child the gift of a joyful beginning</p>
+<div class="rainbow-divider" style="margin: 20px auto 0 auto"></div>
 </section>
 
 <section class="section">
 <div class="container">
 <div class="admission-info fade-up">
-<div class="info-card"><div class="icon">🌟</div><h3>KG Admissions</h3><p>Age 3-4 years</p></div>
-<div class="info-card"><div class="icon">📚</div><h3>LKG Admissions</h3><p>Age 4-5 years</p></div>
-<div class="info-card"><div class="icon">🎓</div><h3>UKG Admissions</h3><p>Age 5-6 years</p></div>
-<div class="info-card"><div class="icon">📞</div><h3>Need Help?</h3><p>Call: 9845754212</p></div>
+<div class="info-card"><div class="icon"><i class="fa-solid fa-star" style="color: #FFD700;"></i></div><h3>KG Admissions</h3><p>Age 3-4 years</p></div>
+<div class="info-card"><div class="icon"><i class="fa-solid fa-book" style="color: #4ECDC4;"></i></div><h3>LKG Admissions</h3><p>Age 4-5 years</p></div>
+<div class="info-card"><div class="icon"><i class="fa-solid fa-graduation-cap" style="color: #A55EEA;"></i></div><h3>UKG Admissions</h3><p>Age 5-6 years</p></div>
+<div class="info-card"><div class="icon"><i class="fa-solid fa-phone" style="color: #FF6B6B;"></i></div><h3>Need Help?</h3><p>Call: 9845754212</p></div>
 </div>
 
 <div class="admission-form-wrapper fade-up">
-<div class="form-title"><h2>📝 Admission Form</h2><p>Fill in the details below to apply</p></div>
+<div class="form-title"><h2><i class="fa-solid fa-pen-to-square" style="color: #45B7D1;"></i> Admission Form</h2><p>Fill in the details below to apply</p></div>
 <form id="admissionForm">
 <div class="form-grid">
 <div class="form-group"><label>Student Name *</label><input type="text" name="studentName" required><span class="error-msg">Please enter student name</span></div>
@@ -48,22 +53,32 @@
 <div class="form-group full"><label>Previous School</label><input type="text" name="previousSchool" placeholder="If any"></div>
 <div class="form-group full"><label>Message</label><textarea name="message" placeholder="Any questions or special requests..."></textarea></div>
 </div>
-<div class="form-submit"><button type="submit" class="btn btn-primary btn-submit">🎒 Submit Admission Form</button></div>
+<div class="form-submit"><button type="submit" class="btn btn-primary btn-submit" style="width: 100%; justify-content: center;"><i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Submit Admission Form</button></div>
 </form>
 </div>
 </div>
 </section>
 
-<section class="cta-section"><div class="container"><h2>Need Help With Admissions? 📞</h2><p>Our team is ready to assist you</p><div class="cta-buttons"><a href="tel:9845754212" class="btn btn-white">📞 Call: 9845754212</a><a href="https://wa.me/919845754212" target="_blank" class="btn btn-secondary">💬 WhatsApp</a><a href="contact.html" class="btn btn-white">📍 Visit School</a></div></div></section>
+<section class="cta-section" style="background-image: linear-gradient(rgba(165, 94, 234, 0.8), rgba(255, 107, 107, 0.8)), url('assets/images/generated/cta_bg_1778131284946.png'); background-size: cover; background-position: center; background-attachment: fixed; color: white;">
+<div class="container" style="padding: 60px 20px; text-align: center;">
+<h2 style="font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 15px; color: white;">Need Help With Admissions? <i class="fa-solid fa-phone" style="color: #FFD700;"></i></h2>
+<p style="font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">Our team is ready to assist you</p>
+<div class="cta-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+<a href="tel:9845754212" class="btn btn-white" style="background: white; color: #FF6B6B;"><i class="fa-solid fa-phone"></i> Call: 9845754212</a>
+<a href="https://wa.me/919845754212" target="_blank" class="btn btn-secondary" style="background: #25D366; color: white; border: none;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="contact.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white;"><i class="fa-solid fa-location-dot"></i> Visit School</a>
+</div>
+</div>
+</section>
 
 <footer class="footer"><div class="container"><div class="footer-grid">
-<div class="footer-about"><h3>🌟 Shining Star Public School</h3><p>Nurturing young minds with love, creativity, and joy.</p><p style="margin-top:10px">📍 Hyder Colony, Chidri Road, Bidar - 585401</p></div>
+<div class="footer-about"><img src="assets/images/logo.png" alt="Shining Star Logo" style="height: 80px; margin-bottom: 15px; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);"><p>Nurturing young minds with love, creativity, and joy.</p><p style="margin-top:10px"><i class="fa-solid fa-location-dot"></i> Hyder Colony, Chidri Road, Bidar - 585401</p></div>
 <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:9845754212">📞 9845754212</a></li><li><a href="tel:9845749212">📞 9845749212</a></li><li><a href="mailto:shiningstarsschoolbidar@gmail.com">📧 Email Us</a></li></ul></div>
-</div><div class="footer-bottom"><p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved.</p></div></div></footer>
+<div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:9845754212"><i class="fa-solid fa-phone"></i> 9845754212</a></li><li><a href="tel:9845749212"><i class="fa-solid fa-phone"></i> 9845749212</a></li><li><a href="mailto:shiningstarsschoolbidar@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li></ul></div>
+</div><div class="footer-bottom"><p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved. Made with <i class="fa-solid fa-heart" style="color: #FF6B6B;"></i></p></div></div></footer>
 
-<a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float">💬</a>
-<div class="call-float"><a href="tel:9845754212">📞</a></div>
+<a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="call-float"><a href="tel:9845754212"><i class="fa-solid fa-phone"></i></a></div>
 
 <!-- SUCCESS POPUP -->
 <div class="success-popup" id="successPopup"><div class="popup-content"><div class="icon">🎉</div><h3>Admission Form Submitted!</h3><p>Thank you for choosing Shining Star Public School. We will contact you shortly!</p><button class="btn btn-primary" id="popupClose">Okay, Great! 🌟</button></div></div>
