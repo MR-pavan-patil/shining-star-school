@@ -8,14 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger?.addEventListener('click', () => {
     navLinks.classList.toggle('open');
     navCta.classList.toggle('open');
-    const spans = hamburger.querySelectorAll('span');
     hamburger.classList.toggle('active');
   });
-  // Close menu on link click
+  // Mobile Dropdown Toggle
+  document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && navLinks.classList.contains('open')) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = dropdownToggle.closest('.dropdown');
+        dropdown.classList.toggle('dropdown-open');
+      }
+    });
+  });
+
+  // Close menu on link click (but not dropdown parent)
   document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const isDropdownParent = link.closest('.dropdown') && link === link.closest('.dropdown').querySelector(':scope > a');
+      if (isDropdownParent && window.innerWidth <= 768) return;
       navLinks.classList.remove('open');
       navCta.classList.remove('open');
+      hamburger.classList.remove('active');
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
     });
   });
 
