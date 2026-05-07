@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gallery | Shining Star Public School, Bidar</title>
+<meta name="description" content="View our beautiful gallery - classroom activities, sports day, annual day, fancy dress & more at Shining Star Public School Bidar.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar"><div class="nav-inner">
+<a href="index.html" class="nav-logo"><div class="logo-placeholder">S</div><span>Shining Star</span></a>
+<ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html" class="active">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul>
+<div class="nav-cta" id="navCta"><a href="tel:9845754212" class="btn-small btn-call">📞 Call</a><a href="admissions.html" class="btn-small btn-admit">Admissions</a></div>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div></nav>
+
+<!-- HERO -->
+<section class="gallery-hero">
+<h1>Our Gallery 📸</h1>
+<p>Beautiful moments of learning, fun & celebration</p>
+<div class="rainbow-divider" style="margin-top:16px"></div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+<div class="container">
+<div class="gallery-filters fade-up">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="classroom">Classroom</button>
+<button class="filter-btn" data-filter="sports">Sports Day</button>
+<button class="filter-btn" data-filter="annual">Annual Day</button>
+<button class="filter-btn" data-filter="fancy">Fancy Dress</button>
+<button class="filter-btn" data-filter="art">Drawing</button>
+<button class="filter-btn" data-filter="celebrations">Celebrations</button>
+<button class="filter-btn" data-filter="picnic">Picnic</button>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item fade-up" data-category="classroom"><img src="assets/images/gallery/classroom.png" alt="Classroom Activities"><div class="gallery-overlay">Classroom Activities</div></div>
+<div class="gallery-item fade-up" data-category="sports"><img src="assets/images/gallery/sports.png" alt="Sports Day"><div class="gallery-overlay">Sports Day Fun</div></div>
+<div class="gallery-item fade-up" data-category="annual"><img src="assets/images/gallery/annual.png" alt="Annual Day"><div class="gallery-overlay">Annual Day Celebration</div></div>
+<div class="gallery-item fade-up" data-category="fancy"><img src="assets/images/gallery/fancy.png" alt="Fancy Dress"><div class="gallery-overlay">Fancy Dress Competition</div></div>
+<div class="gallery-item fade-up" data-category="art"><img src="assets/images/gallery/drawing.png" alt="Drawing Activities"><div class="gallery-overlay">Drawing Activities</div></div>
+<div class="gallery-item fade-up" data-category="celebrations"><img src="assets/images/gallery/celebrations.png" alt="Celebrations"><div class="gallery-overlay">Festival Celebrations</div></div>
+<div class="gallery-item fade-up" data-category="picnic"><img src="assets/images/gallery/picnic.png" alt="School Picnic"><div class="gallery-overlay">School Picnic</div></div>
+<div class="gallery-item fade-up" data-category="classroom"><img src="assets/images/gallery/funlearning.png" alt="Fun Learning"><div class="gallery-overlay">Fun Learning</div></div>
+</div>
+</div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+<button class="lightbox-close" id="lightboxClose">&times;</button>
+<div class="lightbox-content">
+<button class="lightbox-nav lightbox-prev" id="lightboxPrev">❮</button>
+<img id="lightboxImg" src="" alt="Gallery Image">
+<button class="lightbox-nav lightbox-next" id="lightboxNext">❯</button>
+<p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section"><div class="container"><h2>Want to see more? Visit us! 🌟</h2><p>Schedule a campus tour today</p><div class="cta-buttons"><a href="contact.html" class="btn btn-white">📍 Visit Us</a><a href="tel:9845754212" class="btn btn-secondary">📞 Call Now</a></div></div></section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-grid">
+<div class="footer-about"><h3>🌟 Shining Star Public School</h3><p>Nurturing young minds with love, creativity, and joy.</p><p style="margin-top:10px">📍 Hyder Colony, Chidri Road, Bidar - 585401</p></div>
+<div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:9845754212">📞 9845754212</a></li><li><a href="tel:9845749212">📞 9845749212</a></li><li><a href="mailto:shiningstarsschoolbidar@gmail.com">📧 Email Us</a></li></ul></div>
+</div><div class="footer-bottom"><p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved.</p></div></div></footer>
+
+<a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float">💬</a>
+<div class="call-float"><a href="tel:9845754212">📞</a></div>
+
+<script src="js/script.js"></script>
+<script>
+// Gallery Lightbox with Navigation
+(function(){
+  const items = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbCaption = document.getElementById('lightboxCaption');
+  let currentIdx = 0;
+  let visibleItems = [];
+
+  function getVisible() { return [...items].filter(i => i.style.display !== 'none'); }
+  function showItem(idx) {
+    visibleItems = getVisible();
+    if(idx<0) idx=visibleItems.length-1; if(idx>=visibleItems.length) idx=0;
+    currentIdx = idx;
+    const item = visibleItems[idx];
+    lbImg.src = item.querySelector('img').src;
+    lbCaption.textContent = item.querySelector('.gallery-overlay')?.textContent || '';
+    lightbox.classList.add('active'); document.body.style.overflow='hidden';
+  }
+  items.forEach((item,i) => item.addEventListener('click', () => { visibleItems=getVisible(); showItem(visibleItems.indexOf(item)); }));
+  document.getElementById('lightboxPrev')?.addEventListener('click', () => showItem(currentIdx-1));
+  document.getElementById('lightboxNext')?.addEventListener('click', () => showItem(currentIdx+1));
+  document.getElementById('lightboxClose')?.addEventListener('click', () => { lightbox.classList.remove('active'); document.body.style.overflow=''; });
+  lightbox?.addEventListener('click', (e) => { if(e.target===lightbox) { lightbox.classList.remove('active'); document.body.style.overflow=''; }});
+  document.addEventListener('keydown', (e) => { if(e.key==='Escape'){lightbox.classList.remove('active');document.body.style.overflow='';} if(e.key==='ArrowLeft')showItem(currentIdx-1); if(e.key==='ArrowRight')showItem(currentIdx+1); });
+})();
+</script>
+</body>
+</html>
