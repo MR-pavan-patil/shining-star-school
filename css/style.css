@@ -318,4 +318,6 @@ img { max-width:100%; display:block; }
   .gallery-grid { grid-template-columns:1fr; }
   .hero-text h1 { font-size:1.8rem; }
   .features-grid { grid-template-columns:1fr; }
+  .hero-content { min-height: 50vh !important; padding: 120px 20px 60px !important; }
+  .hero { background-position: center !important; }
 }
