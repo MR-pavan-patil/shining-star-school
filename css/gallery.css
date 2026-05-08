@@ -1,7 +1,7 @@
 /* ===== GALLERY PAGE STYLES ===== */
-.gallery-hero { padding:120px 0 60px; background:linear-gradient(180deg,#E8F6FF,#FFF9F0); text-align:center; }
-.gallery-hero h1 { font-size:2.5rem; color:#3A7BD5; margin-bottom:10px; }
-.gallery-hero p { color:#777; font-size:1.1rem; }
+.gallery-hero { padding:140px 20px 70px; text-align:center; position:relative; overflow:hidden; }
+.gallery-hero h1 { font-size:2.8rem; margin-bottom:12px; font-weight:700; letter-spacing:-0.5px; }
+.gallery-hero p { font-size:1.15rem; opacity:0.92; }
 
 .gallery-filters { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:30px; }
 .filter-btn { padding:10px 24px; border-radius:25px; border:2px solid var(--sky); background:transparent; color:var(--sky); font-weight:600; cursor:pointer; transition:all .3s; font-family:'Nunito'; font-size:.95rem; }
