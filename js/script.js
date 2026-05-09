@@ -188,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact Form
   const contactForm = document.getElementById('contactForm');
   contactForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
     const fields = contactForm.querySelectorAll('[required]');
     let valid = true;
     fields.forEach(field => {
@@ -196,9 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!field.value.trim()) { group.classList.add('invalid'); valid = false; }
       else { group.classList.remove('invalid'); }
     });
-    if (valid) {
-      alert('Thank you for your inquiry! We will get back to you soon.');
-      contactForm.reset();
+    
+    if (!valid) {
+      e.preventDefault();
+    } else {
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+      // Form will submit naturally to FormSubmit.co
     }
   });
 

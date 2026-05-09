@@ -107,14 +107,16 @@
                     <h3 style="font-size: 2rem; margin-bottom: 30px; color: #2d3748; position: relative; z-index: 1;">
                         Send Inquiry <i class="fa-solid fa-paper-plane"
                             style="color: #A55EEA; font-size: 1.5rem; margin-left: 10px;"></i></h3>
-                    <form id="contactForm" style="position: relative; z-index: 1;">
+                    <form id="contactForm" action="https://formsubmit.co/shiningstarsschoolbidar@gmail.com" method="POST" style="position: relative; z-index: 1;">
+                        <input type="hidden" name="_subject" value="New Website Inquiry!">
+                        <input type="hidden" name="_captcha" value="false">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                             <div class="form-group" style="margin-bottom: 0;"><label
                                     style="font-weight: 600; color: #4a5568; margin-bottom: 8px; display: block;">Your
                                     Name <span style="color: #FF6B6B;">*</span></label>
                                 <div style="position: relative;"><i class="fa-solid fa-user"
                                         style="position: absolute; left: 15px; top: 15px; color: #a0aec0;"></i><input
-                                        type="text" required
+                                        type="text" name="name" required
                                         style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: inherit; transition: all 0.3s ease; background: white;"
                                         onfocus="this.style.borderColor='#A55EEA'; this.style.boxShadow='0 0 0 3px rgba(165,94,234,0.1)';"
                                         onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';"></div>
@@ -124,7 +126,7 @@
                                     Number <span style="color: #FF6B6B;">*</span></label>
                                 <div style="position: relative;"><i class="fa-solid fa-phone"
                                         style="position: absolute; left: 15px; top: 15px; color: #a0aec0;"></i><input
-                                        type="tel" required
+                                        type="tel" name="phone" required
                                         style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: inherit; transition: all 0.3s ease; background: white;"
                                         onfocus="this.style.borderColor='#A55EEA'; this.style.boxShadow='0 0 0 3px rgba(165,94,234,0.1)';"
                                         onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';"></div>
@@ -135,7 +137,7 @@
                                 Address</label>
                             <div style="position: relative;"><i class="fa-solid fa-envelope"
                                     style="position: absolute; left: 15px; top: 15px; color: #a0aec0;"></i><input
-                                    type="email"
+                                    type="email" name="email"
                                     style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: inherit; transition: all 0.3s ease; background: white;"
                                     onfocus="this.style.borderColor='#A55EEA'; this.style.boxShadow='0 0 0 3px rgba(165,94,234,0.1)';"
                                     onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';"></div>
@@ -145,7 +147,7 @@
                                 Inquiry Type</label>
                             <div style="position: relative;"><i class="fa-solid fa-clipboard-question"
                                     style="position: absolute; left: 15px; top: 15px; color: #a0aec0;"></i><input
-                                    type="text" placeholder="e.g. Admission inquiry"
+                                    type="text" name="subject" placeholder="e.g. Admission inquiry"
                                     style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: inherit; transition: all 0.3s ease; background: white;"
                                     onfocus="this.style.borderColor='#A55EEA'; this.style.boxShadow='0 0 0 3px rgba(165,94,234,0.1)';"
                                     onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';"></div>
@@ -155,7 +157,7 @@
                                 <span style="color: #FF6B6B;">*</span></label>
                             <div style="position: relative;"><i class="fa-solid fa-comment-dots"
                                     style="position: absolute; left: 15px; top: 15px; color: #a0aec0;"></i><textarea
-                                    required placeholder="How can we help you?"
+                                    required name="message" placeholder="How can we help you?"
                                     style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: inherit; transition: all 0.3s ease; min-height: 120px; background: white; resize: vertical;"
                                     onfocus="this.style.borderColor='#A55EEA'; this.style.boxShadow='0 0 0 3px rgba(165,94,234,0.1)';"
                                     onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';"></textarea>
