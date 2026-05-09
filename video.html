@@ -1,78 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Video Gallery | Shining Star Public School, Bidar</title>
-<meta name="description" content="Watch videos of our school events, activities, and campus tour at Shining Star Public School Bidar.">
-<link rel="icon" type="image/png" href="assets/images/logo.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/gallery.css">
-<style>
-.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:30px;margin-top:40px}
-.video-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06);transition:transform .3s ease,box-shadow .3s ease}
-.video-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
-.video-wrapper{position:relative;width:100%;background:#000;border-radius:20px 20px 0 0;overflow:hidden}
-.video-wrapper video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#111}
-.video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5));display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .3s}
-.video-overlay.hidden{opacity:0;pointer-events:none}
-.play-btn-circle{width:70px;height:70px;background:rgba(255,107,107,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;box-shadow:0 8px 25px rgba(255,107,107,.5);transition:transform .3s,background .3s}
-.video-card:hover .play-btn-circle{transform:scale(1.12);background:#FF6B6B}
-.video-duration{position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.7);color:#fff;font-size:.75rem;padding:3px 8px;border-radius:6px;font-weight:600}
-.video-info{padding:18px 20px}
-.video-info h3{font-size:1.15rem;color:#333;margin-bottom:4px;font-weight:700}
-.video-info p{color:#777;font-size:.88rem;line-height:1.4}
-/* Modal */
-.video-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
-.video-modal.active{display:flex}
-.video-modal video{max-width:90vw;max-height:85vh;border-radius:16px;box-shadow:0 0 60px rgba(0,0,0,.6)}
-.modal-close{position:absolute;top:20px;right:30px;color:#fff;font-size:2.2rem;cursor:pointer;background:rgba(255,255,255,.15);width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s}
-.modal-close:hover{background:rgba(255,255,255,.3)}
-/* Add-video hint card */
-.add-video-card{border:3px dashed #ddd;background:#fafafa;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;color:#bbb;transition:border-color .3s,color .3s}
-.add-video-card:hover{border-color:#A55EEA;color:#A55EEA}
-.add-video-card i{font-size:3rem;margin-bottom:10px}
-.add-video-card p{font-size:1rem;font-weight:600}
-@media(max-width:600px){.video-grid{grid-template-columns:1fr;gap:20px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Video Gallery | Shining Star Public School, Bidar</title>
+  <meta name="description"
+    content="Watch videos of our school events, activities, and campus tour at Shining Star Public School Bidar.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 30px;
+      margin-top: 40px
+    }
+
+    .video-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+      transition: transform .3s ease, box-shadow .3s ease
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .12)
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      background: #000;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #111
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, .5));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity .3s
+    }
+
+    .video-overlay.hidden {
+      opacity: 0;
+      pointer-events: none
+    }
+
+    .play-btn-circle {
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 107, 107, .9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      box-shadow: 0 8px 25px rgba(255, 107, 107, .5);
+      transition: transform .3s, background .3s
+    }
+
+    .video-card:hover .play-btn-circle {
+      transform: scale(1.12);
+      background: #FF6B6B
+    }
+
+    .video-duration {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      background: rgba(0, 0, 0, .7);
+      color: #fff;
+      font-size: .75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600
+    }
+
+    .video-info {
+      padding: 18px 20px
+    }
+
+    .video-info h3 {
+      font-size: 1.15rem;
+      color: #333;
+      margin-bottom: 4px;
+      font-weight: 700
+    }
+
+    .video-info p {
+      color: #777;
+      font-size: .88rem;
+      line-height: 1.4
+    }
+
+    /* Modal */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, .85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px)
+    }
+
+    .video-modal.active {
+      display: flex
+    }
+
+    .video-modal video {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 0 60px rgba(0, 0, 0, .6)
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, .15);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, .3)
+    }
+
+    /* Add-video hint card */
+    .add-video-card {
+      border: 3px dashed #ddd;
+      background: #fafafa;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      color: #bbb;
+      transition: border-color .3s, color .3s
+    }
+
+    .add-video-card:hover {
+      border-color: #A55EEA;
+      color: #A55EEA
+    }
+
+    .add-video-card i {
+      font-size: 3rem;
+      margin-bottom: 10px
+    }
+
+    .add-video-card p {
+      font-size: 1rem;
+      font-weight: 600
+    }
+
+    @media(max-width:600px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<!-- NAVBAR -->
-<nav class="navbar"><div class="nav-inner">
-<a href="index.html" class="nav-logo"><img src="assets/images/logo.png" style="height: 70px; mix-blend-mode: multiply;" alt="Logo"></a>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html"><i class="fa-solid fa-house" style="color: #A55EEA;"></i> Home</a></li>
-<li><a href="about.html"><i class="fa-solid fa-heart" style="color: #A55EEA;"></i> About</a></li>
-<li><a href="programs.html"><i class="fa-solid fa-book-open" style="color: #A55EEA;"></i> Classes</a></li>
-<li class="dropdown">
-<a href="gallery.html" class="active"><i class="fa-solid fa-images" style="color: #A55EEA;"></i> Gallery <i class="fa-solid fa-caret-down"></i></a>
-<ul class="dropdown-menu">
-<li><a href="gallery.html"><i class="fa-solid fa-image"></i> Image Gallery</a></li>
-<li><a href="video.html"><i class="fa-solid fa-video"></i> Video Gallery</a></li>
-</ul>
-</li>
-<li><a href="admissions.html"><i class="fa-solid fa-graduation-cap" style="color: #A55EEA;"></i> Admissions</a></li>
-<li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #A55EEA;"></i> Contact</a></li>
-</ul>
-<div class="nav-cta" id="navCta">
-<a href="admissions.html" class="btn-small btn-admit" style="background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);"><i class="fa-solid fa-wand-magic-sparkles"></i> Admissions Open</a>
-</div>
-<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-</div></nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.png"
+          style="height: 70px; mix-blend-mode: multiply;" alt="Logo"></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"><i class="fa-solid fa-house" style="color: #A55EEA;"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-heart" style="color: #A55EEA;"></i> About</a></li>
+        <li><a href="programs.html"><i class="fa-solid fa-book-open" style="color: #A55EEA;"></i> Classes</a></li>
+        <li class="dropdown">
+          <a href="gallery.html" class="active"><i class="fa-solid fa-images" style="color: #A55EEA;"></i> Gallery <i
+              class="fa-solid fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="gallery.html"><i class="fa-solid fa-image"></i> Image Gallery</a></li>
+            <li><a href="video.html"><i class="fa-solid fa-video"></i> Video Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="admissions.html"><i class="fa-solid fa-graduation-cap" style="color: #A55EEA;"></i> Admissions</a>
+        </li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #A55EEA;"></i> Contact</a></li>
+      </ul>
+      <div class="nav-cta" id="navCta">
+        <a href="admissions.html" class="btn-small btn-admit"
+          style="background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);"><i
+            class="fa-solid fa-wand-magic-sparkles"></i> Admissions Open</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<section class="gallery-hero" style="background-image: linear-gradient(135deg, #f6d365 0%, #fda085 100%); padding: 80px 20px; text-align: center;">
-<h1 style="color: white; font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Video Gallery <i class="fa-solid fa-film" style="color: #fff;"></i></h1>
-<p style="color: white; font-size: 1.2rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Watch our magical moments and school events</p>
-<div class="rainbow-divider" style="margin: 20px auto 0 auto"></div>
-</section>
+  <!-- HERO -->
+  <section class="gallery-hero"
+    style="background-image: linear-gradient(135deg, #f6d365 0%, #fda085 100%); padding: 80px 20px; text-align: center;">
+    <h1 style="color: white; font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Video
+      Gallery <i class="fa-solid fa-film" style="color: #fff;"></i></h1>
+    <p style="color: white; font-size: 1.2rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Watch our magical moments and
+      school events</p>
+    <div class="rainbow-divider" style="margin: 20px auto 0 auto"></div>
+  </section>
 
-<!-- FULLSCREEN VIDEO MODAL -->
-<div class="video-modal" id="videoModal">
-<div class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></div>
-<video id="modalVideo" controls></video>
-</div>
+  <!-- FULLSCREEN VIDEO MODAL -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></div>
+    <video id="modalVideo" controls></video>
+  </div>
 
-<!--
+  <!--
   ====================================================
   HOW TO ADD YOUR LOCAL VIDEOS:
   ====================================================
@@ -85,163 +254,207 @@
   ====================================================
 -->
 
-<!-- VIDEO GALLERY -->
-<section class="section">
-<div class="container">
-<div class="video-grid">
+  <!-- VIDEO GALLERY -->
+  <section class="section">
+    <div class="container">
+      <div class="video-grid">
 
-<!-- Video 1 -->
-<div class="video-card fade-up">
-<div class="video-wrapper">
-<video src="assets/videos/1.mp4" preload="metadata" muted></video>
-<div class="video-overlay" onclick="playInModal(this)">
-<div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-</div>
-</div>
-<!-- <div class="video-info">
+        <!-- Video 1 -->
+        <div class="video-card fade-up">
+          <div class="video-wrapper">
+            <video src="assets/videos/1.mp4" preload="metadata" muted></video>
+            <div class="video-overlay" onclick="playInModal(this)">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <!-- <div class="video-info">
 <h3>School Highlights</h3>
 <p>Watch our wonderful school moments and activities.</p>
 </div> -->
-</div>
+        </div>
 
-<!-- Video 2 -->
-<div class="video-card fade-up">
-<div class="video-wrapper">
-<video src="assets/videos/2.mp4" preload="metadata" muted></video>
-<div class="video-overlay" onclick="playInModal(this)">
-<div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-</div>
-</div>
-<!-- <div class="video-info">
+        <!-- Video 2 -->
+        <div class="video-card fade-up">
+          <div class="video-wrapper">
+            <video src="assets/videos/2.mp4" preload="metadata" muted></video>
+            <div class="video-overlay" onclick="playInModal(this)">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <!-- <div class="video-info">
 <h3>Fun Activities</h3>
 <p>Our students enjoying creative and fun-filled activities.</p>
 </div> -->
-</div>
+        </div>
 
-<!-- Video 3 -->
-<div class="video-card fade-up">
-<div class="video-wrapper">
-<video src="assets/videos/3.mp4" preload="metadata" muted></video>
-<div class="video-overlay" onclick="playInModal(this)">
-<div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-</div>
-</div>
-<!-- <div class="video-info">
+        <!-- Video 3 -->
+        <div class="video-card fade-up">
+          <div class="video-wrapper">
+            <video src="assets/videos/3.mp4" preload="metadata" muted></video>
+            <div class="video-overlay" onclick="playInModal(this)">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <!-- <div class="video-info">
 <h3>Celebrations & Events</h3>
 <p>Joyful celebrations and special events at Shining Star.</p>
 </div> -->
-</div>
+        </div>
 
-<!-- Video 4 -->
-<div class="video-card fade-up">
-<div class="video-wrapper">
-<video src="assets/videos/4.mp4" preload="metadata" muted></video>
-<div class="video-overlay" onclick="playInModal(this)">
-<div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
-</div>
-</div>
-<!-- <div class="video-info">
+        <!-- Video 4 -->
+        <div class="video-card fade-up">
+          <div class="video-wrapper">
+            <video src="assets/videos/4.mp4" preload="metadata" muted></video>
+            <div class="video-overlay" onclick="playInModal(this)">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <!-- <div class="video-info">
 <h3>Campus Life</h3>
 <p>A glimpse into the daily life at our vibrant school campus.</p>
 </div> -->
-</div>
+        </div>
 
-</div>
-</div>
-</section>
 
-<!-- Video Modal Script -->
-<script>
-function playInModal(overlay){
-  const videoSrc = overlay.parentElement.querySelector('video').src;
-  const modal = document.getElementById('videoModal');
-  const modalVideo = document.getElementById('modalVideo');
-  modalVideo.src = videoSrc;
-  modal.classList.add('active');
-  modalVideo.play();
-}
-document.getElementById('modalClose').addEventListener('click',function(){
-  const modal = document.getElementById('videoModal');
-  const modalVideo = document.getElementById('modalVideo');
-  modalVideo.pause();
-  modalVideo.src = '';
-  modal.classList.remove('active');
-});
-document.getElementById('videoModal').addEventListener('click',function(e){
-  if(e.target === this){
-    document.getElementById('modalClose').click();
-  }
-});
-</script>
+        <!-- Video 1 -->
+        <div class="video-card fade-up">
+          <div class="video-wrapper">
+            <video src="assets/videos/5.mp4" preload="metadata" muted></video>
+            <div class="video-overlay" onclick="playInModal(this)">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <!-- <div class="video-info">
+<h3>School Highlights</h3>
+<p>Watch our wonderful school moments and activities.</p>
+</div> -->
+        </div>
 
-<!-- CTA -->
-<section class="cta-section" style="background-image: linear-gradient(rgba(165, 94, 234, 0.8), rgba(255, 107, 107, 0.8)), url('assets/images/generated/cta_bg_1778131284946.png'); background-size: cover; background-position: center; background-attachment: fixed; color: white;">
-<div class="container" style="padding: 60px 20px; text-align: center;">
-<h2 style="font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 15px; color: white;">Want to see more? Visit us! <i class="fa-solid fa-star" style="color: #FFD700;"></i></h2>
-<p style="font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">Schedule a campus tour today</p>
-<div class="cta-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-<a href="contact.html" class="btn btn-white" style="background: white; color: #FF6B6B;"><i class="fa-solid fa-location-dot"></i> Visit Us</a>
-<a href="tel:9845754212" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white;"><i class="fa-solid fa-phone"></i> Call Now</a>
-</div>
-</div>
-</section>
+        <!-- Video 2 -->
+        <div class="video-card fade-up">
+          <div class="video-wrapper">
+            <video src="assets/videos/6.mp4" preload="metadata" muted></video>
+            <div class="video-overlay" onclick="playInModal(this)">
+              <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <!-- <div class="video-info">
+<h3>Fun Activities</h3>
+<p>Our students enjoying creative and fun-filled activities.</p>
+</div> -->
+        </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-about">
-<img src="assets/images/logo.png" alt="Shining Star Logo" style="height: 80px; margin-bottom: 15px; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);">
-<p>Nurturing young minds with love, creativity, and joy. Where every child shines bright! ⭐</p>
-<p style="margin-top:10px"><i class="fa-solid fa-location-dot" style="color: #FF6B6B;"></i> Hyder Colony, Beside Haibati Hospital, Opp KEB, Adarsh Colony, Chidri Road, Bidar - 585401</p>
-<div class="footer-social">
-<a href="https://wa.me/919845754212" target="_blank" class="social-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-<a href="tel:9845754212" class="social-phone" title="Call Us"><i class="fa-solid fa-phone"></i></a>
-<a href="mailto:shiningstarsschoolbidar@gmail.com" class="social-email" title="Email"><i class="fa-solid fa-envelope"></i></a>
-<a href="https://maps.app.goo.gl/e3rBNYEC74BwEja27" target="_blank" class="social-map" title="Directions"><i class="fa-solid fa-map-location-dot"></i></a>
-</div>
-</div>
-<div class="footer-col">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-<li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-<li><a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a></li>
-<li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
-<li><a href="video.html"><i class="fa-solid fa-chevron-right"></i> Videos</a></li>
-<li><a href="admissions.html"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Contact Us</h4>
-<ul>
-<li><a href="tel:9845754212"><i class="fa-solid fa-phone"></i> 9845754212</a></li>
-<li><a href="tel:9845749212"><i class="fa-solid fa-phone"></i> 9845749212</a></li>
-<li><a href="mailto:shiningstarsschoolbidar@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
-<li><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Visit School</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>School Hours</h4>
-<div class="footer-timing">
-<div class="timing-row"><span>Mon - Sat</span><span>8:30 AM - 3:30 PM</span></div>
-<div class="timing-row"><span>Sunday</span><span>Closed</span></div>
-</div>
-<ul style="margin-top: 15px;">
-<li><a href="admissions.html"><i class="fa-solid fa-graduation-cap"></i> Apply Now</a></li>
-<li><a href="https://wa.me/919845754212" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved. Made with <i class="fa-solid fa-heart" style="color: #FF6B6B;"></i></p>
-</div>
-</div>
-</footer>
+      </div>
+    </div>
+  </section>
 
-<a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
-<div class="call-float"><a href="tel:9845754212"><i class="fa-solid fa-phone"></i></a></div>
+  <!-- Video Modal Script -->
+  <script>
+    function playInModal(overlay) {
+      const videoSrc = overlay.parentElement.querySelector('video').src;
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      modalVideo.src = videoSrc;
+      modal.classList.add('active');
+      modalVideo.play();
+    }
+    document.getElementById('modalClose').addEventListener('click', function () {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      modalVideo.pause();
+      modalVideo.src = '';
+      modal.classList.remove('active');
+    });
+    document.getElementById('videoModal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        document.getElementById('modalClose').click();
+      }
+    });
+  </script>
 
-<script src="js/script.js"></script>
+  <!-- CTA -->
+  <section class="cta-section"
+    style="background-image: linear-gradient(rgba(165, 94, 234, 0.8), rgba(255, 107, 107, 0.8)), url('assets/images/generated/cta_bg_1778131284946.png'); background-size: cover; background-position: center; background-attachment: fixed; color: white;">
+    <div class="container" style="padding: 60px 20px; text-align: center;">
+      <h2 style="font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 15px; color: white;">Want
+        to see more? Visit us! <i class="fa-solid fa-star" style="color: #FFD700;"></i></h2>
+      <p style="font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">Schedule a campus
+        tour today</p>
+      <div class="cta-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-white" style="background: white; color: #FF6B6B;"><i
+            class="fa-solid fa-location-dot"></i> Visit Us</a>
+        <a href="tel:9845754212" class="btn btn-secondary"
+          style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white;"><i
+            class="fa-solid fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img src="assets/images/logo.png" alt="Shining Star Logo"
+            style="height: 80px; margin-bottom: 15px; background: white; border-radius: 50%; padding: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.25);">
+          <p>Nurturing young minds with love, creativity, and joy. Where every child shines bright! ⭐</p>
+          <p style="margin-top:10px"><i class="fa-solid fa-location-dot" style="color: #FF6B6B;"></i> Hyder Colony,
+            Beside Haibati Hospital, Opp KEB, Adarsh Colony, Chidri Road, Bidar - 585401</p>
+          <div class="footer-social">
+            <a href="https://wa.me/919845754212" target="_blank" class="social-whatsapp" title="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:9845754212" class="social-phone" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:shiningstarsschoolbidar@gmail.com" class="social-email" title="Email"><i
+                class="fa-solid fa-envelope"></i></a>
+            <a href="https://maps.app.goo.gl/e3rBNYEC74BwEja27" target="_blank" class="social-map" title="Directions"><i
+                class="fa-solid fa-map-location-dot"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="programs.html"><i class="fa-solid fa-chevron-right"></i> Programs</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="video.html"><i class="fa-solid fa-chevron-right"></i> Videos</a></li>
+            <li><a href="admissions.html"><i class="fa-solid fa-chevron-right"></i> Admissions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:9845754212"><i class="fa-solid fa-phone"></i> 9845754212</a></li>
+            <li><a href="tel:9845749212"><i class="fa-solid fa-phone"></i> 9845749212</a></li>
+            <li><a href="mailto:shiningstarsschoolbidar@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
+            </li>
+            <li><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Visit School</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>School Hours</h4>
+          <div class="footer-timing">
+            <div class="timing-row"><span>Mon - Sat</span><span>8:30 AM - 3:30 PM</span></div>
+            <div class="timing-row"><span>Sunday</span><span>Closed</span></div>
+          </div>
+          <ul style="margin-top: 15px;">
+            <li><a href="admissions.html"><i class="fa-solid fa-graduation-cap"></i> Apply Now</a></li>
+            <li><a href="https://wa.me/919845754212" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp
+                Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shining Star Public School, Bidar. All Rights Reserved. Made with <i class="fa-solid fa-heart"
+            style="color: #FF6B6B;"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919845754212" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+  <div class="call-float"><a href="tel:9845754212"><i class="fa-solid fa-phone"></i></a></div>
+
+  <script src="js/script.js"></script>
 </body>
+
 </html>
