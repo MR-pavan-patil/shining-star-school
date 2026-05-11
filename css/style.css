@@ -316,7 +316,7 @@ img { max-width:100%; display:block; }
 }
 @media(max-width:480px) {
   .gallery-grid { grid-template-columns:1fr; }
-  .hero-text h1 { font-size:1.8rem; line-height: 1.3; }
+  .hero-text h1 { font-size: 2.2rem; line-height: 1.3; }
   .hero-text p { font-size: 1rem; line-height: 1.5; margin-bottom: 20px; }
   .features-grid { grid-template-columns:1fr; }
   .hero-content { min-height: 50vh !important; padding: 120px 20px 60px !important; }
